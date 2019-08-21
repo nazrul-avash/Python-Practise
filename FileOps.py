@@ -1,4 +1,14 @@
 import os
+def deleteFiles(directory,ext):
+	if os.path.exists(directory):
+		os.chdir(directory)
+		for p in os.listdir(directory):
+			if not os.path.isdir(p):
+				temp = os.path.splitext(p)
+				if temp[1] == ext:
+					os.remove(p)
+	else:
+		print("inval")				
 def writeFiles(track):
 	fileOb = open(track,"a")
 	text = "assholes are closer than they appear"
@@ -29,8 +39,13 @@ def renameFiles(presentName, wouldBeName):
 		os.rename(presentName, wouldBeName)
 	else:
 		print("file not fouond")	
+def countAllFilesWithOS(link):
+	count = 0
+	for d,sd,f in os.walk(link):
+		count += len(f)
+	return count	
 def countAllFiles(names,count,line):
-	print(count)	
+		
 	if len(names) == 0:
 		return count 
 	for i in names:
@@ -39,7 +54,7 @@ def countAllFiles(names,count,line):
 			count +=1
 		elif os.path.isdir(line+i):
 			count = countAllFiles(os.listdir(line+i+"/"),count,line+i+"/")	
-			print(count)
+			
 	return count 		
 def countFile(directoryName):
 	genList = []
@@ -51,6 +66,7 @@ def countFile(directoryName):
 		 count =1
 	return count	 	
 
-line = "/home/nazrul/experimentals/iso.txt"
-writeFiles(line)
-readFiles(line)
+line = "/home/nazrul/experimentals/"
+count = 0
+print(countAllFiles(os.listdir(line),count,line))
+print(countAllFilesWithOS(line))
