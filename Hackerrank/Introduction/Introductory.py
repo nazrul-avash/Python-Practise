@@ -38,4 +38,17 @@ def symmetric_differenced():
 	ffVal = list(map(int,fVal))
 	ffVal.sort()
 	print(ffVal)
+def list_comp():
+	x = int(input())
+	y = int(input())
+	z = int(input())
+	n = int(input())
+	finalList = [[i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if (i+j+k) !=n ]
+	print(finalList)
+def secondMaximum():
+    n = int(input())
+    arr = set(map(int, input().split()))
+    li = list(arr)
+    li.sort()
+    print(li[-2])	
 symmetric_differenced()
