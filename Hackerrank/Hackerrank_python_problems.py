@@ -50,5 +50,22 @@ def secondMaximum():
     arr = set(map(int, input().split()))
     li = list(arr)
     li.sort()
-    print(li[-2])	
-symmetric_differenced()
+    print(li[-2])
+def nested_list():
+    mainLi=[]
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        subLi= []
+        subLi.append(name)
+        subLi.append(score)
+        mainLi.append(subLi)
+    mainLi.sort(key = operator.itemgetter(1))
+    lowest = mainLi[0][1]
+    mainLi = [seed for seed in mainLi if seed[1]!= lowest]
+    lowest = mainLi[0][1]
+    tempLi = [seed for seed in mainLi if seed[1]== lowest]
+    fLi = [i[0] for i in tempLi]
+    fLi.sort()
+    print("\n".join(fLi))	
+nested_list()

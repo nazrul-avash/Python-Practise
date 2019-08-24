@@ -1,6 +1,5 @@
-x = int(input())
-y = int(input())
-z = int(input())
-n = int(input())
-finalList = [[i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if (i+j+k) !=n ]
-print(finalList)
+c = {"abel":[6,55,62],"cabel":[4,121,547]}
+print(type(c))
+add = 0
+li = round(float(sum(c["abel"])/3),2)
+print("{:.2f}".format(li))
