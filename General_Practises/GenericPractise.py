@@ -1,5 +1,6 @@
-c = {"abel":[6,55,62],"cabel":[4,121,547]}
-print(type(c))
-add = 0
-li = round(float(sum(c["abel"])/3),2)
-print("{:.2f}".format(li))
+in_str = "asdagasgaf"
+li = []
+for x in range(0,len(in_str),4):
+	li.append(in_str[x:x+4])
+in_str2 = "\n".join(li)
+print(in_str2)	

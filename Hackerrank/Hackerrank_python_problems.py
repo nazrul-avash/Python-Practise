@@ -67,5 +67,95 @@ def nested_list():
     tempLi = [seed for seed in mainLi if seed[1]== lowest]
     fLi = [i[0] for i in tempLi]
     fLi.sort()
-    print("\n".join(fLi))	
-nested_list()
+    print("\n".join(fLi))
+def execute_command(command,*args):
+    
+    if command == "insert":
+        print("ye")
+        li.insert(args[0],args[1])
+    elif command == "print":
+        print(li)
+    elif command == "append":
+        li.append(args[0])
+    elif command == "pop":
+        li.pop()
+    elif command == "remove":
+        li.remove(args[0])
+    elif command == "reverse":
+        li.reverse()
+    elif command == "sort":
+        li.sort()           
+
+li = []
+num = int(input())
+for i in range(num):
+    sr = input().split()
+    command = sr[0]
+    if len(sr) is 3:
+        execute_command(command,int(sr[1]),int(sr[2]))
+    elif len(sr) is 2:
+        execute_command(command,int(sr[1]))
+    else:
+        execute_command(command)    
+                
+n = int(input())
+integer_list = tuple(map(int, input().split()))
+print(hash(integer_list))
+
+def swap_case(s):
+    temp =""
+    for x in s:
+        if x.isupper():
+            temp += x.lower()
+        else:
+            temp += x.upper()
+    return temp
+def split_and_join(line):
+    # write your code here
+    new_str = line.split()
+    return "-".join(x for x in new_str)
+def string_validators():
+    s = input()
+    li = [0,0,0,0,0]
+    for x in s:
+        if x.isalnum():
+            li[0] += 1
+        if x.isalpha():
+            li[1] += 1
+
+        if x.isdigit():
+            li[2] += 1
+
+        if x.islower():
+            li[3] += 1
+
+        if x.isupper():
+            li[4] += 1        
+    for x in li:
+        if x > 0:
+            print("True")
+        else:
+            print("False")
+def minion_game(in_str):
+    
+    kevin,stuart = 0,0
+    length = len(in_str)
+    for x in range(length):
+        if in_str[x] in "AEIOU":
+            kevin += length - x
+        else:
+            stuart += length -x
+    if kevin > stuart:
+        print("Kevin"+ " "+ str(kevin))
+    elif kevin < stuart:
+        print("Stuart"+ " "+ str(stuart))
+    else:
+        print("Draw")
+def wrap(in_str, seed):
+
+    li = []
+    for x in range(0,len(in_str),seed):
+        li.append(in_str[x:x+seed])
+    in_str2 = "\n".join(li)
+    return in_str2
+        
