@@ -158,4 +158,10 @@ def wrap(in_str, seed):
         li.append(in_str[x:x+seed])
     in_str2 = "\n".join(li)
     return in_str2
-        
+def time_delta(first_str, second_str):
+
+    dt_first = datetime.datetime.strptime(first_str,"%a %d %b %Y %H:%M:%S %z")
+    dt_second = datetime.datetime.strptime(second_str,"%a %d %b %Y %H:%M:%S %z")
+    delt = abs(dt_first - dt_second).total_seconds()
+    delt = int(delt)
+    return str(delt)         

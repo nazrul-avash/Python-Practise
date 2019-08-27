@@ -1,6 +1,6 @@
-in_str = "asdagasgaf"
-li = []
-for x in range(0,len(in_str),4):
-	li.append(in_str[x:x+4])
-in_str2 = "\n".join(li)
-print(in_str2)	
+import datetime
+first_str ="Sun 10 May 2015 13:54:36 -0700"
+second_str ="Sun 10 May 2015 13:54:36 -0000"
+dt_first = datetime.datetime.strptime(first_str,"%a %d %B %Y %H:%M:%S %z")
+dt_second = datetime.datetime.strptime(second_str,"%a %d %B %Y %H:%M:%S %z")
+print(int((dt_first - dt_second).total_seconds()))
