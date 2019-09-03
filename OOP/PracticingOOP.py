@@ -1,12 +1,8 @@
-class Animal:
-	self.age = age
-	def __init__(self,name):
-		self.name = name
-
-
-a = Animal("Doggy")
-b = Animal("Chuggy")
-print(a.name)
-print(b.name)
-print(a.age)
-print(b.age)				
+class prac:
+	print("hello oop")
+	val = 6
+	def add(self):
+		print(self.val)
+a = prac()
+print(a.add())
+print(a.val)

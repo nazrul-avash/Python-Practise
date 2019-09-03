@@ -164,4 +164,30 @@ def time_delta(first_str, second_str):
     dt_second = datetime.datetime.strptime(second_str,"%a %d %b %Y %H:%M:%S %z")
     delt = abs(dt_first - dt_second).total_seconds()
     delt = int(delt)
-    return str(delt)         
+    return str(delt)
+def find_weekday():
+    in_str = input()
+    dt = datetime.datetime.strptime(in_str,"%m %d %Y")
+    date_ob = datetime.datetime.date(dt)
+    print(datetime.datetime.strftime(dt,"%A").upper())
+def solve(in_str):
+    return " ".join(i.capitalize() for i in in_str.split(" "))
+def score_words(words):
+    score = 0
+    for word in words:
+        num_vowels = 0
+        for letter in word:
+            if is_vowel(letter):
+                num_vowels += 1
+        if num_vowels % 2 == 0:
+            score += 2
+        else:
+            score +=1
+    return score
+def print_formatted(num):    
+    pad = len("{0:b}".format(num))
+    pad = str(pad)
+    for x in range(1,num+1):
+        st ="{0:"+pad+"d} {0:"+pad+"o} {0:"+pad+"X} {0:"+pad+"b}"
+        print(st.format(x))    
+

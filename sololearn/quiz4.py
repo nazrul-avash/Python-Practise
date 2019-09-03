@@ -1,0 +1,1 @@
+print(float(5*5//9+int(12)))
